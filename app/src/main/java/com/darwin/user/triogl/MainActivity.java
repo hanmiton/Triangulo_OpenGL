@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.opengl.GLSurfaceView;
 
+//PROGRAMA ORIGINAL ¨PARA EL INFORME
 public class MainActivity extends ActionBarActivity {
     GLSurfaceView vista;
     @Override
