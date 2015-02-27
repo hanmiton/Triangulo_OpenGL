@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
 //Comentado por Fabricio Gavilanes mediante GitHub
 //26/02/2015
 public class MainActivity extends ActionBarActivity {
     GLSurfaceView vista;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,19 +19,21 @@ public class MainActivity extends ActionBarActivity {
         setContentView(vista);
     }
 
-    @Override public void onPause(){
+    @Override
+    public void onPause() {
         super.onPause();
         vista.onPause();
     }
 
-    @Override public void onStop(){
+    @Override
+    public void onStop() {
         super.onResume();
         vista.onResume();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }

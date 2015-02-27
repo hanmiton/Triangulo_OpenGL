@@ -2,24 +2,28 @@ package com.darwin.user.triogl;
 
 import android.opengl.GLSurfaceView.Renderer;
 import android.opengl.GLU;
+
 import java.util.Random;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 /**
  * Created by user on 19/02/2015.
+ * modificado por Luis Chicaiza
  */
-public class Pintar implements Renderer{
+public class Pintar implements Renderer {
     Random aleatorio = new Random();
     Triangulo triangulo = new Triangulo();
+
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         float r = aleatorio.nextFloat();
         float g = aleatorio.nextFloat();
         float b = aleatorio.nextFloat();
-        gl.glClearColor(r,g,b,1.0f);
-       // gl.glClearColor(0.0f,1.0f,0.0f,0.5f);
-        gl.glShadeModel(GL10.GL_SMOOTH);
+        gl.glClearColor(r, g, b, 1.0f);
+
+        gl.glShadeModel(GL10.GL_SMOOTH);  //
         gl.glClearDepthf(1.0f);
         gl.glEnable(GL10.GL_DEPTH_TEST);
         gl.glDepthFunc(GL10.GL_LEQUAL);

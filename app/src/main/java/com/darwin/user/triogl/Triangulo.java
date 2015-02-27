@@ -2,7 +2,7 @@ package com.darwin.user.triogl;
 
 /**
  * Created by user on 19/02/2015.
- * modificado Fabricio Gavilanes
+ * modificado por Luis Chicaiza
  */
 
 import java.nio.ByteBuffer;
@@ -14,25 +14,25 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class Triangulo {
     // x, y, z
-    private float vertices[]={
-                    -1.0f, 0.0f, 0.0f,  // vertices[0], bottom left
-                    1.0f, 0.0f, 0.0f,   // vertices[1], bottom right
-                    0.0f, 0.5f, 0.0f,   // vertices[2], middle top
-            };
-     private float colors[]={
-                    0.0f, 1.0f, 0.0f, 1.0f,
-                    0.0f, 1.0f, 0.0f, 1.0f,
-                    1.0f, 0.5f, 0.0f, 1.0f,
-            };
+    private float vertices[] = {
+            1.0f, 0.0f, 0.0f,  // vertices[0], boton left
+            -1.0f, 0.0f, 0.0f,   // vertices[1], boton right
+            0.0f, 0.5f, 0.0f,   // vertices[2], middle top
+    };
+    private float colors[] = {
+            1.0f, 0.5f, 0.0f, 1.0f,
+            0.0f, 1.0f, 0.0f, 0.0f,
+            0.0f, 1.0f, 0.0f, 1.0f,
+    };
 
-    private short[] indices={
-                    0, 1, 2, 1
-            };
+    private short[] indices = {
+            0, 1, 2, 1
+    };
     private FloatBuffer vertexBuffer;
     private FloatBuffer mColorBuffer;
     private ShortBuffer indexBuffer;
 
-    public Triangulo(){
+    public Triangulo() {
         ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length * 4);
         vbb.order(ByteOrder.nativeOrder());
         vertexBuffer = vbb.asFloatBuffer();
@@ -52,7 +52,7 @@ public class Triangulo {
         indexBuffer.position(0);
     }
 
-    public void draw(GL10 gl){
+    public void draw(GL10 gl) {
         gl.glFrontFace(GL10.GL_CCW);
         gl.glEnable(GL10.GL_CULL_FACE);
         gl.glCullFace(GL10.GL_BACK);
