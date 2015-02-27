@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 //Comentado por Fabricio Gavilanes mediante GitHub
+//26/02/2015
 public class MainActivity extends ActionBarActivity {
     GLSurfaceView vista;
     @Override
